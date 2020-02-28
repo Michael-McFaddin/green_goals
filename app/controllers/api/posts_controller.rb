@@ -1,5 +1,7 @@
 class Api::PostsController < ApplicationController
 
+  before_action :authenticate_user
+
   def index
     @posts = Post.all
     render "index.json.jb"
@@ -9,10 +11,17 @@ class Api::PostsController < ApplicationController
     @post = Post.new(
       title: params[:title],
       body: params[:body],
-      user_id: params[:user],
-      category_id: params[:category]
+      user_id: current_user.id,
+      category_id: params[:category_id]
       )
     if @post.save
+       # remove eval() before frontend work, rails turns array to string
+      eval(params[:images]).each do |url|
+        Image.create(
+          url: url,
+          post_id: @post.id
+          )
+      end
       render "show.json.jb"
     else
       render json: {errors: @post.errors.full_messages}, status: :unprocessable_entity

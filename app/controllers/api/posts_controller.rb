@@ -37,7 +37,7 @@ class Api::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.title = params[:title] || @post.title
     @post.body = params[:body] || @post.body
-    @post.category_id = params[:category] || @post.category
+    @post.category_id = params[:category_id] || @post.category_id
     if @post.save
       render "show.json.jb"
     else

@@ -1,5 +1,7 @@
 class Api::ImagesController < ApplicationController
 
+  before_action :authenticate_user
+  
   def show
     @image = Image.find(params[:id])
     render "show.json.jb"

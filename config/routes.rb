@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get "/categories" => "categories#index"
     get "/categories/:id" => "categories#show"
 
+    post "/images" => "images#create"
     get "/images/:id" => "images#show"
     delete "/images/:id" => "images#destroy"
 

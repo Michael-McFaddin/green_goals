@@ -4,6 +4,4 @@
   body: post.body,
   user_id: post.user_id,
   category_id: post.category_id,
-  category_name: post.category.name,
-  user_name: post.user.user_name
 }

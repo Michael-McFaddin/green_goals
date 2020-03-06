@@ -6,13 +6,8 @@ category[:posts] = @category.posts.map do |post|
   if post.images.any? 
     post_hash[:image] = post.images.first.url
   end
-  
+
   post_hash
 end
-
-
-# if @category.posts.first.images.any? 
-#   post_hash[:image] = @category.posts.first.images.first.url
-# end
 
 category

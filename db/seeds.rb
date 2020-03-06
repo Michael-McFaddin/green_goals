@@ -30,3 +30,10 @@
 #   {url: "https://www.sabert.com/sites/default/files/waste-reduction.png", post_id: 3}
 # ])
 
+User.create!([
+  {first_name: "Mike", last_name: "Brown", email: "mikebrown@email.com", user_name: "mikebrown", password_digest: "password"},
+  {first_name: "Sara", last_name: "Brown", email: "sarabrown@email.com", user_name: "sarabrown", password_digest: "password"},
+  {first_name: "Heather", last_name: "Smalls", email: "heathersmalls@email.com", user_name: "heathersmalls", password_digest: "password"},
+  {first_name: "Steve", last_name: "Kroop", email: "stevekroop@email.com", user_name: "stevekroop", password_digest: "password"},
+  {first_name: "John", last_name: "Stewart", email: "johnstewart@email.com", user_name: "johnstewart", password_digest: "password"},
+  ])

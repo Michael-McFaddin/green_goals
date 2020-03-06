@@ -41,8 +41,8 @@ User.create!([
 
 Category.create!([
   {
-    name: "Diet",
-    image_url: "https://globalagriculturalproductivity.org/wp-content/uploads/2018/10/environment-icons-1.png"
+    name: "Food",
+    image_url: "https://sustainability.ucdavis.edu/local_resources/images/action/pledge_icon_food.jpg"
   },
   {
     name: "Waste",
@@ -51,5 +51,17 @@ Category.create!([
   {
     name: "Water",
     image_url: "https://sustainability.ucdavis.edu/local_resources/images/action/pledge_icon_water.jpg"
+  },
+  {
+    name: "Energy",
+    image_url: "https://sustainability.ucdavis.edu/local_resources/images/action/pledge_icon_energy.jpg"
+  },
+  {
+    name: "Transportation",
+    image_url: "https://sustainability.ucdavis.edu/local_resources/images/action/pledge_icon_commute.jpg"
+  },
+  {
+    name: "Social",
+    image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTGVawhAFvkrVNe1XwA0mDArAp3j-WG8UMXi4MCLvNyigelIwCp"
   }
 ])

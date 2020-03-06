@@ -1,11 +1,18 @@
-post_hash = render partial: "category.json.jb", locals: {category: @category}
+category = render partial: "category.json.jb", locals: {category: @category}
 
-post_hash[:posts] = @category.posts.map do |post|
-  render partial: "api/posts/post.json.jb", locals: {post: post}
+category[:posts] = @category.posts.map do |post|
+  post_hash = render partial: "api/posts/post.json.jb", locals: {post: post}
+
+  if post.images.any? 
+    post_hash[:image] = post.images.first.url
+  end
+  
+  post_hash
 end
-# post_hash[:posts] = @category.posts
-# post_hash[:user_name] = @category.posts.map do |post|
-#   post.user.user_name
+
+
+# if @category.posts.first.images.any? 
+#   post_hash[:image] = @category.posts.first.images.first.url
 # end
 
-post_hash
+category

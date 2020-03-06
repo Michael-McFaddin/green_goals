@@ -1,3 +1,23 @@
 @favorites.map do |favorite|
-  render partial: "favorite.json.jb", locals: {favorite: favorite}
+  favorite_hash = render partial: "favorite.json.jb", locals: {favorite: favorite}
+
+  # favorite_hash[:category] = favorite.post.category.name
+  # favorite_hash[:title] = favorite.post.title
+  # favorite_hash[:user_name] = favorite.post.user.user_name
+  # favorite_hash[:body] = favorite.post.body
+  # favorite_hash[:updated_at] = favorite.post.
+
+  favorite_hash[:post] = {
+    category_name: favorite.post.category.name,
+    title: favorite.post.title,
+    user_name: favorite.post.user.user_name,
+    body: favorite.post.body,
+    updated_at: favorite.post.updated_at
+  }
+
+  if favorite.post.images.any? 
+    favorite_hash[:image] = favorite.post.images.first.url
+  end
+  
+  favorite_hash
 end

@@ -2,5 +2,4 @@
   id: favorite.id,
   user_id: favorite.user_id,
   post_id: favorite.post_id
-
 }

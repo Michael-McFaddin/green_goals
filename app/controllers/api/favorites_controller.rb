@@ -13,7 +13,7 @@ class Api::FavoritesController < ApplicationController
       post_id: params[:post_id]
       )
     if @favorite.save
-      render json: {message: "Favorite Saved!"}
+      render "show.json.jb"
     else
       render json: {errors: @favorite.errors.full_message}, status: :unprocessable_entity
     end

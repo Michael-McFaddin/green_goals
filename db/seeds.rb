@@ -36,4 +36,20 @@ User.create!([
   {first_name: "Heather", last_name: "Smalls", email: "heathersmalls@email.com", user_name: "heathersmalls", password_digest: "password"},
   {first_name: "Steve", last_name: "Kroop", email: "stevekroop@email.com", user_name: "stevekroop", password_digest: "password"},
   {first_name: "John", last_name: "Stewart", email: "johnstewart@email.com", user_name: "johnstewart", password_digest: "password"},
+  {first_name: "Beth", last_name: "Smith", email: "bethsmith@email.com", user_name: "bethsmith", password_digest: "password"}
   ])
+
+Category.create!([
+  {
+    name: "Diet",
+    image_url: "https://globalagriculturalproductivity.org/wp-content/uploads/2018/10/environment-icons-1.png"
+  },
+  {
+    name: "Waste",
+    image_url: "https://sustainability.ucdavis.edu/local_resources/images/action/pledge_icon_waste.jpg"
+  },
+  {
+    name: "Water",
+    image_url: "https://sustainability.ucdavis.edu/local_resources/images/action/pledge_icon_water.jpg"
+  }
+])

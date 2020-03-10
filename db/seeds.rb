@@ -379,8 +379,41 @@
 
 
 
-# Favorite.create!([
-#   {user_id: 2, post_id: 3},
-#   {user_id: 1, post_id: 2},
-#   {user_id: 3, post_id: 1}
-# ])
+Favorite.create!([
+  {user_id: 4, post_id: 26},
+  {user_id: 4, post_id: 27},
+  {user_id: 6, post_id: 18},
+  {user_id: 6, post_id: 12},
+  {user_id: 7, post_id: 35},
+  {user_id: 7, post_id: 16},
+  {user_id: 9, post_id: 25},
+  {user_id: 9, post_id: 28},
+  {user_id: 10, post_id: 31},
+  {user_id: 10, post_id: 23},
+  {user_id: 11, post_id: 21},
+  {user_id: 11, post_id: 16},
+  {user_id: 24, post_id: 30},
+  {user_id: 24, post_id: 17},
+  {user_id: 25, post_id: 15},
+  {user_id: 25, post_id: 18},
+  {user_id: 26, post_id: 35},
+  {user_id: 26, post_id: 32},
+  {user_id: 27, post_id: 29},
+  {user_id: 27, post_id: 27},
+  {user_id: 28, post_id: 20},
+  {user_id: 28, post_id: 19},
+  {user_id: 29, post_id: 34},
+  {user_id: 29, post_id: 16},
+  {user_id: 30, post_id: 22},
+  {user_id: 30, post_id: 14},
+  {user_id: 31, post_id: 18},
+  {user_id: 31, post_id: 13},
+  {user_id: 32, post_id: 33},
+  {user_id: 32, post_id: 29},
+  {user_id: 33, post_id: 15},
+  {user_id: 33, post_id: 21},
+  {user_id: 34, post_id: 26},
+  {user_id: 34, post_id: 17},
+  {user_id: 35, post_id: 35},
+  {user_id: 35, post_id: 12}
+])

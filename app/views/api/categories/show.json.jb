@@ -3,9 +3,11 @@ category = render partial: "category.json.jb", locals: {category: @category}
 category[:posts] = @category.posts.map do |post|
   post_hash = render partial: "api/posts/post.json.jb", locals: {post: post}
 
+  post_hash[:user_name] = post.user.user_name
   if post.images.any? 
     post_hash[:image] = post.images.first.url
   end
+
 
   post_hash
 end

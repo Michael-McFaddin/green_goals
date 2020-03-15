@@ -16,7 +16,7 @@ class Api::PostsController < ApplicationController
       )
     if @post.save
        # remove eval() before frontend work, rails turns array to string
-      eval(params[:images]).each do |url|
+      params[:images].each do |url|
         Image.create(
           url: url,
           post_id: @post.id

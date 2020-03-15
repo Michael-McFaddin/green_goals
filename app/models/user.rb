@@ -6,8 +6,8 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
   validates :user_name, presence: true, uniqueness: true
 
-  has_many :posts
-  has_many :favorites
+  has_many :posts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   # favorited_posts is the name so it doesn't get confused with the other methods
   has_many :favorite_posts, through: :favorites, source: :post
 

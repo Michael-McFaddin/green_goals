@@ -1,5 +1,12 @@
 post_hash = render partial: "post.json.jb", locals: {post: @post}
 
+
+if current_user
+  post_hash[:favorite] = current_user.favorite_posts.include?(@post)
+  # post_hash[:favorite_id] = current_user.favorites.where(post_id: @post.id)
+end
+
+# post_hash[:favorite_id] = @post.favorites.where(post_id: @post.id)
 post_hash[:category_name] = @post.category.name
 post_hash[:user_name] = @post.user.user_name
 post_hash[:images] = @post.images.map do |image|

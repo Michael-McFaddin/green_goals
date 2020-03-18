@@ -4,4 +4,5 @@
   body: post.body,
   user_id: post.user_id,
   category_id: post.category_id,
+  updated_at: post.created_at
 }

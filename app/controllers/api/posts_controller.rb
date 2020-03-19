@@ -8,6 +8,10 @@ class Api::PostsController < ApplicationController
   end
 
   def create
+    response = Cloudinary::Uploader.upload(params[:image])
+    cloudinary_url = response["secure_url"]
+    # the above is syntax for connecting to cloudinary. See also config/initializers/cloudinary.rb
+
     @post = Post.new(
       title: params[:title],
       body: params[:body],
@@ -15,13 +19,16 @@ class Api::PostsController < ApplicationController
       category_id: params[:category_id]
       )
     if @post.save
-       # remove eval() before frontend work, rails turns array to string
-      params[:images].each do |url|
-        Image.create(
-          url: url,
-          post_id: @post.id
-          )
-      end
+      #syntax when not using cloudinary
+      # params[:images].each do |url|
+      #   Image.create(
+      #     url: url,
+      #     post_id: @post.id
+      #     )
+      Image.create(
+        url: cloudinary_url,
+        post_id: @post.id
+        )
       render "show.json.jb"
     else
       render json: {errors: @post.errors.full_messages}, status: :unprocessable_entity

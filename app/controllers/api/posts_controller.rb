@@ -8,10 +8,6 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    response = Cloudinary::Uploader.upload(params[:image])
-    cloudinary_url = response["secure_url"]
-    # the above is syntax for connecting to cloudinary. See also config/initializers/cloudinary.rb
-
     @post = Post.new(
       title: params[:title],
       body: params[:body],
@@ -19,16 +15,31 @@ class Api::PostsController < ApplicationController
       category_id: params[:category_id]
       )
     if @post.save
-      #syntax when not using cloudinary
-      # params[:images].each do |url|
-      #   Image.create(
-      #     url: url,
-      #     post_id: @post.id
-      #     )
-      Image.create(
-        url: cloudinary_url,
-        post_id: @post.id
-        )
+      if params[:image1]
+        # the above is syntax for connecting to cloudinary. See also config/initializers/cloudinary.rb
+        response = Cloudinary::Uploader.upload(params[:image1])
+        cloudinary_url = response["secure_url"]
+        Image.create(
+          url: cloudinary_url,
+          post_id: @post.id
+          )
+      end
+      if params[:image2]
+        response = Cloudinary::Uploader.upload(params[:image2])
+        cloudinary_url = response["secure_url"]
+        Image.create(
+          url: cloudinary_url,
+          post_id: @post.id
+          )
+      end
+      if params[:image3]
+        response = Cloudinary::Uploader.upload(params[:image3])
+        cloudinary_url = response["secure_url"]
+        Image.create(
+          url: cloudinary_url,
+          post_id: @post.id
+          )
+      end
       render "show.json.jb"
     else
       render json: {errors: @post.errors.full_messages}, status: :unprocessable_entity

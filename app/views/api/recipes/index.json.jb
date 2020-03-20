@@ -1,0 +1,16 @@
+@recipes.map do |recipe|
+  {
+    title: recipe["title"],
+    prep_time: recipe["readyInMinutes"],
+    servings: recipe["servings"],
+    image: recipe["image"],
+    instructions: recipe["instructions"],
+    ingredients: recipe["extendedIngredients"].map do |item|
+      {
+        ingredient: item["original"]
+      }
+    end
+  }
+end
+
+# @recipes

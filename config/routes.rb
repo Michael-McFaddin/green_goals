@@ -30,5 +30,7 @@ Rails.application.routes.draw do
     get "/favorites/:id" => "favorites#show"
     delete "/favorites/:id" => "favorites#destroy"
 
+    get "/recipes" => "recipes#index"
+
   end
 end

@@ -10,9 +10,10 @@
         ingredient: item["original"]
       }
     end,
-    analyzed_instructions: recipe["analyzedInstructions"].map do |inst|
+    analyzed_instructions: recipe["analyzedInstructions"][0]["steps"].map do |inst|
       {
-        steps: inst["steps"]
+        number: inst["number"],
+        step: inst["step"]
       }
     end
   }

@@ -5,6 +5,7 @@
     servings: recipe["servings"],
     image: recipe["image"],
     # instructions: recipe["instructions"],
+    diets: recipe["diets"],
     ingredients: recipe["extendedIngredients"].map do |item|
       {
         ingredient: item["original"]

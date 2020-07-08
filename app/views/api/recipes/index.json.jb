@@ -4,7 +4,6 @@
     prep_time: recipe["readyInMinutes"],
     servings: recipe["servings"],
     image: recipe["image"],
-    # instructions: recipe["instructions"],
     diets: recipe["diets"],
     ingredients: recipe["extendedIngredients"].map do |item|
       {

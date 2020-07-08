@@ -4,7 +4,7 @@
   post_hash[:user_name] = post.user.user_name
   post_hash[:category_name] = post.category.name
 
-  if post.images.any? #checking to see if anything in images
+  if post.images.any?
     post_hash[:image] = post.images.first.url
   end
 

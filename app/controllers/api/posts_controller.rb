@@ -16,7 +16,6 @@ class Api::PostsController < ApplicationController
       )
     if @post.save
       if params[:image1]
-        # the above is syntax for connecting to cloudinary. See also config/initializers/cloudinary.rb
         response = Cloudinary::Uploader.upload(params[:image1])
         cloudinary_url = response["secure_url"]
         Image.create(

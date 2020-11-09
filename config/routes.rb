@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
   namespace :api do
-
     post "/sessions" => "sessions#create"
 
     post "/users" => "users#create"
@@ -28,6 +26,7 @@ Rails.application.routes.draw do
     delete "/favorites/:id" => "favorites#destroy"
 
     get "/recipes" => "recipes#index"
-
   end
+
+  get "/*path" => proc { [200, {}, [ActionView::Base.new.render(file: "public/index.html")]] }
 end

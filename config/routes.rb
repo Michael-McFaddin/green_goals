@@ -28,5 +28,5 @@ Rails.application.routes.draw do
     get "/recipes" => "recipes#index"
   end
 
-  get "/*path" => proc { [200, {}, [ActionView::Base.new.render(file: "public/index.html")]] }, format: false
+  get "/*path" => proc { [200, {}, [ActionView::Base.new.render(file: "public/index.html")]] }, :constraints => lambda { |req| req.path !~ /\.(png|jpg|js|css)$/ }
 end

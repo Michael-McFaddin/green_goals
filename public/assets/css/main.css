@@ -78,7 +78,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-image: url('greengoals_4.jpg');
+	background-image: url('../images/greengoals_4.jpg');
 	background-size: cover;
 }
 
@@ -11837,4 +11837,4 @@ h5.heading-1.second-line:after {
 	margin-right: 30px;
 }
 
-sourceMappingURL=main.css.map
+# sourceMappingURL=main.css.map
